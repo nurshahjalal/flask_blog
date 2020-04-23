@@ -1,0 +1,99 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+	<div  class="content-section">
+		<form method="POST" action="">
+			<!-- this is for hiding information -->
+			{{ form.hidden_tag() }}
+			<fieldset class="form-group">
+				<legend class="border-bottom mb-4"> Join Today 	</legend>
+
+				<!-- 
+				username, email, password, confirm_password 
+				they all coning from Registration class
+				 -->
+
+				<div class="form-group">
+					<!-- this line is for label  -->
+					{{ form.username.label(class="form-control-label") }}
+                    <!-- this section if username is invalid  -->
+                    {% if form.username.errors %}
+                        <!-- this line is for invalid username field  -->
+                        {{ form.username(class="form-control form-control-lg is-invalid") }}
+                        <div>
+                            {% for error in form.username.errors %}
+                                <span> {{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        <!-- this line is for valid username field  -->
+					    {{ form.username(class="form-control form-control-lg") }}
+                    {% endif %}
+				</div>
+				<div class="form-group">
+					{{ form.email.label(class="form-control-label") }}
+                    <!-- this section if email is invalid  -->
+                    {% if form.email.errors %}
+                        <!-- this line is for invalid username field  -->
+                        {{ form.email(class="form-control form-control-lg is-invalid") }}
+                        <div>
+                            {% for error in form.email.errors %}
+                                <span> {{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        <!-- this line is for valid username field  -->
+					    {{ form.email(class="form-control form-control-lg") }}
+                    {% endif %}
+
+				</div>
+
+				<div class="form-group">
+					{{ form.password.label(class="form-control-label") }}
+					<!-- this section if username is invalid  -->
+                    {% if form.password.errors %}
+                        <!-- this line is for invalid username field  -->
+                        {{ form.password(class="form-control form-control-lg is-invalid") }}
+                        <div>
+                            {% for error in form.password.errors %}
+                                <span> {{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        <!-- this line is for valid username field  -->
+					    {{ form.password(class="form-control form-control-lg") }}
+                    {% endif %}
+				</div>
+
+				<div class="form-group">
+					{{ form.confirm_password.label(class="form-control-label") }}
+					<!-- this section if username is invalid  -->
+                    {% if form.confirm_password.errors %}
+                        <!-- this line is for invalid username field  -->
+                        {{ form.confirm_password(class="form-control form-control-lg is-invalid") }}
+                        <div>
+                            {% for error in form.confirm_password.errors %}
+                                <span> {{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        <!-- this line is for valid username field  -->
+					    {{ form.confirm_password(class="form-control form-control-lg") }}
+                    {% endif %}
+				</div>
+			</fieldset>
+
+			<div class="form-group">
+				{{ form.submit(class="btn btn-outline-info") }} 
+			</div>
+		</form>
+	</div>
+
+<!-- This section is for if user already have an account-->
+	<div class="border-top pt-3">
+		<small class="text-muted">
+			Already Have An Account? <a class="ml-2" href="{{ url_for('login') }}"> Sign In </a>
+		</small>
+	</div>
+
+{% endblock content %}
