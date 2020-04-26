@@ -1,5 +1,13 @@
 # flask_blog
 
+library that needs to install
+
+pip install flask
+pip install flask-wtf
+pip install flask-bcrypt
+pip install flask-login
+
+
 This is simple blog app using python flask micro framework
 
 # ====== Frond End ===============

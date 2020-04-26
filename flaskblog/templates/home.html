@@ -1,8 +1,6 @@
-{% extends 'layout.html'%}
-
+{% extends "layout.html" %}
 {% block content %}
-
-    {% for post in posts%}
+    {% for post in posts %}
         <article class="media content-section">
           <div class="media-body">
             <div class="article-metadata">
@@ -12,7 +10,6 @@
             <h2><a class="article-title" href="#">{{ post.title }}</a></h2>
             <p class="article-content">{{ post.content }}</p>
           </div>
-    </article>
-    {% endfor  %}
-
-{% endblock content%}
+        </article>
+    {% endfor %}
+{% endblock content %}
