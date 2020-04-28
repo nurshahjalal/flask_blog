@@ -6,6 +6,7 @@ pip install flask
 pip install flask-wtf
 pip install flask-bcrypt
 pip install flask-login
+pip install Pillow
 
 
 This is simple blog app using python flask micro framework
